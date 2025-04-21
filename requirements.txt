@@ -1,0 +1,20 @@
+# requirements.txt atualizado com fallback para sentence-transformers
+
+# Frontmatter e parsing de Markdown
+python-frontmatter
+markdown
+
+# Indexação vetorial
+faiss-cpu
+
+# CLI interativo
+typer[all]
+
+# Modelos e embeddings (fallback ativo)
+sentence-transformers
+
+# ONNX (comentado para referência futura)
+# optimum
+# onnxruntime
+# onnx
+# transformers
