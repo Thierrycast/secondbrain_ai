@@ -1,0 +1,6 @@
+{
+  "pergunta": "Você é um assistente pessoal de IA. Responda com base no contexto abaixo.\n\nContexto:\n{conteudo}\n\nPergunta:\n{pergunta}\n\nResposta:",
+  "formatar": "Corrija erros de ortografia, gramática e estilo no texto abaixo, mantendo estrutura Markdown.\n\nTexto:\n{conteudo}\n\nTexto corrigido:",
+  "resumir": "Resuma o conteúdo mantendo o estilo original.\n\nTexto:\n{conteudo}\n\nResumo:",
+  "revisar": "Reescreva o texto com mais clareza e fluidez, sem alterar o significado.\n\nTexto:\n{conteudo}\n\nTexto revisado:"
+}
