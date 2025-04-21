@@ -1,0 +1,15 @@
+# Ambiente e arquivos temporários
+.env
+__pycache__/
+*.pyc
+.venv/
+
+
+# Dados locais gerados
+data/
+vault/
+
+# Arquivos personalizados e sensíveis
+Modelfile*
+!Modelfile.example
+prompts/pessoal.json
