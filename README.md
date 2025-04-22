@@ -1,8 +1,8 @@
 # 📚 SecondBrain AI (com Deva)
 
-Um sistema de IA local integrado ao seu Second Brain no Obsidian. Permite buscas semânticas e interações via terminal ou API usando um modelo personalizado (via Ollama + embeddings).
+Um sistema de IA local integrado ao seu Second Brain no Obsidian. Ele funciona como um sistema de geração aumentada por recuperação (RAG), usando suas anotações em Markdown como fonte de dados para interações com um modelo local via Ollama.
 
-> ⚠️ Aviso: este projeto nasceu num intenso momento de "vibecoding" e pode parecer um pouco caótico em alguns pontos. É tipo um "RAM de ideias vivas" — ainda não é um sistema consolidado, mas sim uma estrutura evolutiva em tempo real 😄
+> ⚠️ Aviso: este projeto nasceu num intenso momento de "vibecoding". Algumas decisões estruturais podem parecer caóticas — e estão mesmo. Mas funcionam. 😄
 
 ---
 
@@ -28,23 +28,27 @@ Um sistema de IA local integrado ao seu Second Brain no Obsidian. Permite buscas
 ## 📦 Instalação
 
 1. Clone o repositório:
+
 ```bash
 git clone https://github.com/seu-usuario/secondbrain_ai.git
 cd secondbrain_ai
 ```
 
 2. Instale as dependências:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Configure seu ambiente:
+
 ```bash
 cp .env.example .env
 # edite o .env conforme necessário
 ```
 
 4. Crie um modelo no Ollama com base no seu `Modelfile`:
+
 ```bash
 ollama create deva -f Modelfile
 ```
@@ -56,22 +60,27 @@ ollama create deva -f Modelfile
 ## 🧪 Como usar
 
 ### Terminal (CLI)
+
 ```bash
 python scripts/cli_main.py
 ```
+
 Digite perguntas com base nas suas notas. O sistema buscará trechos relevantes e responderá com o LLM.
 
 ### Reindexar completamente:
+
 ```bash
 python scripts/cli_main.py --reindexar
 ```
 
 ### Rodar em modo escuta (atualização automática):
+
 ```bash
 python scripts/cli_main.py --escutar
 ```
 
 ### API (FastAPI)
+
 ```bash
 uvicorn server.api:app --reload
 ```
@@ -89,11 +98,13 @@ Os prompts usados pelo modelo são externos e configuráveis em JSON:
 - `prompts/pessoal.json`: **sua versão customizada** (é ignorada pelo Git)
 
 Você pode mudar o caminho no `.env` com:
+
 ```env
 PROMPT_PATH=prompts/pessoal.json
 ```
 
 Os campos aceitos são:
+
 - `pergunta`
 - `formatar`
 - `revisar`
@@ -123,6 +134,7 @@ Modelfile*
 ```
 
 Você pode criar outros arquivos de documentação, como:
+
 - `docs/prompts.md`
 - `docs/ollama-models.md`
 
@@ -133,6 +145,7 @@ Você pode criar outros arquivos de documentação, como:
 ## 🧹 Para manter o repositório limpo
 
 Certifique-se de que seu `.gitignore` contém:
+
 ```gitignore
 .env
 __pycache__/
